@@ -1,0 +1,11 @@
+/* Silver */
+.o2k7SkinSilver .mceToolbar .mceToolbarStart span, .o2k7SkinSilver .mceButton, .o2k7SkinSilver .mceSplitButton, .o2k7SkinSilver .mceSeparator, .o2k7SkinSilver .mceSplitButton a.mceOpen, .o2k7SkinSilver .mceListBox a.mceOpen {background-image:url(skin_o2k7_button_bg_silver.png)}
+.o2k7SkinSilver .mceMenuItemTitle a {background:#eee}
+.o2k7SkinSilver td.mceToolbar, .o2k7SkinSilver .mceStatusbar {background: #fafafa;
+background: -moz-linear-gradient(top,  #fafafa 0%, #ececec 47%, #dcdcdc 100%);
+background: -webkit-linear-gradient(top,  #fafafa 0%,#ececec 47%,#dcdcdc 100%);
+background: linear-gradient(to bottom,  #fafafa 0%,#ececec 47%,#dcdcdc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#dcdcdc',GradientType=0 );
+}
+.o2k7SkinSilver .mceListBox .mceText {background:#FFF}
+.o2k7SkinSilver .mceExternalToolbar, .o2k7SkinSilver .mceListBox .mceText, .o2k7SkinSilver div.mceMenu, .o2k7SkinSilver table.mceLayout, .o2k7SkinSilver .mceMenuItemTitle a, .o2k7SkinSilver table.mceLayout tr.mceFirst td, .o2k7SkinSilver table.mceLayout, .o2k7SkinSilver .mceMenuItemTitle a, .o2k7SkinSilver table.mceLayout tr.mceLast td, .o2k7SkinSilver .mceIframeContainer {border-color: #bbb}
