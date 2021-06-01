@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- (X-UA Edge will use the latest version available of IE) -->
+<meta http-equiv="cache-control" content="no-cache" />
+<meta charset="UTF-8">
+<title>Full featured example</title>
+
+<!-- TinyMCE Minified (production)-->
+<script type="text/javascript" src="tiny_mce.js"></script>
+<!-- TinyMCE Not Minified (use this for debug/testing instead of the above one)
+<script type="text/javascript" src="tiny_mce_src.js"></script>
+-->
+
+<script type="text/javascript">
+	tinyMCE.init({
+		// General options
+		
+		/*Mode: 			This option specifies how elements are converted into TinyMCE editor instances. This option can be set to any of: 		
+		textareas 			Converts all textarea elements to editors when the page loads.
+		specific_textareas 	Converts all textarea elements that match the editor_selector setting or don't match the editor_deselector setting.
+		exact 				Converts elements of the specified names as listed in the elements option, these can
+							be any kind for example, textareas or divs.							
+		none 				Does not convert any elements. Later, your page 
+							can call the tinyMCE.execCommand("mceAddControl", true, "id"); function.*/							
+		mode : "textareas",		
+		/*mode : "exact",
+		elements : "elm1",*/
+		theme : "advanced",
+		skin : "o2k7",	//default
+		//skin_variant : "silver",		
+		plugins : "autolink, paste,advimage,lists,advlist,emotions,style,inlinepopups,table,advhr,contextmenu,autosave,directionality," +
+				"save,fullscreen,fullpage,pagebreak,preview,wordcount,layer,autoresize,noneditable,insertdatetime,searchreplace," +
+				"print,media,visualblocks,xhtmlxtras,template,nonbreaking,latex",	
+				//bbcode, iespell
+				
+		//language This option should contain a language code of the language pack to use with TinyMCE. These codes are in ISO-639-1 format.
+		//language : "nl"				
+
+		// Theme options
+		theme_advanced_buttons1 : "newdocument,save,|,restoredraft,|,preview,print,|,undo,redo,|,visualblocks,visualaid,pagebreak,nonbreaking,|,cite,abbr,acronym,del,ins,|,insertdate,inserttime,|,insertlayer,moveforward,movebackward,absolute,|,fullscreen,fullpage,cleanup,code,|,help",
+		theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,bullist,numlist,|,outdent,indent,blockquote,|,link,unlink,anchor,|,search,|,charmap,latex,emotions,image,media,|,tablecontrols",		
+		theme_advanced_buttons3 : "bold,italic,underline,forecolor,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,styleselect,fontselect,fontsizeselect,|,hr,advhr,|,removeformat,styleprops,attribs,backcolor,template",
+		//theme_advanced_buttons4 : "iespell,sub,sup,|, strikethrough,replace,ltr,rtl,visualchars", 		
+		
+		//theme_advanced_disable: "bold,italic",		
+		
+		/*This option enables you to specify where the toolbar should be located. This option can be set to "top" (the default) or "bottom" or "external". Choosing the "external" location adds the toolbar to a DIV element and sets the class of this DIV to "mceExternalToolbar". This enables you to freely specify the location of the toolbar. */
+		theme_advanced_toolbar_location : "top",  //"external"
+		theme_advanced_toolbar_align : "left",
+		theme_advanced_statusbar_location : "bottom",
+		theme_advanced_resizing : true,
+		theme_advanced_resize_horizontal : false,
+		
+		theme_advanced_resizing_use_cookie : false,
+				
+		//If you set this option to true, page contents will be stored away if the page is unloaded, for example if the user navigates away from the page and then navigated back to it 
+		add_unload_trigger: false,
+		
+		//By default is set to use an unlimited number of undo levels. But this steals lots of memory so for low end systems a value of 10 may be better.		
+		custom_undo_redo_levels : 10,		
+		
+		//directionality : "rtl",
+		
+		/*This option specifies the base URL for all relative URLs in the document. The default value is the directory of the current document. If a value is provided, it must specify a directory (not a document) and must end with a "/". */
+		//document_base_url : "http://www.site.com/path/",
+		
+		//readonly : 1,	
+
+		//auto_focus : "elm1",			
+		
+		//If you enable this feature, whitespace such as tabs and spaces will be preserved.
+		//preformatted : true,
+				
+		//restore draft plugin
+		//autosave_interval : '20s',
+		//autosave_retention : '15m',
+		
+		//This option allows specification of the indentation level for indent/outdent buttons in the UI. This defaults to 30px but can be any value.
+		//indentation : '20px',
+				
+		//This option enables you to specify a class for the body of each editor instance. 
+		//body_class : "my_class",
+		//This will set specific ids on the bodies of specific editors.
+		//body_id : "elm1=my_id,elm2=my_id2",
+		
+		//browser_spellcheck : true,
+		
+		//Shows confirmation dialog before deleting non editable content (that has class="mceNonEditable")
+		noneditable_prevent_delete : true,
+				
+		//forced_root_block default is 'p' , if set to false then pressing enter will add <br/> instead of p blocks 
+		//forced_root_block : false,
+		
+		//extended_valid_elements: "span[class]",
+		
+		//encoding : "xml",		
+		
+		//date time formats - the default ones are in file en.js
+		plugin_insertdate_dateFormat : "%d/%m/%Y",
+		plugin_insertdate_timeFormat : "%H:%M",		
+
+		theme_advanced_default_font_size : '8pt',
+		theme_advanced_default_font_family : 'Verdana',
+		theme_advanced_fonts : "Andale Mono=andale mono,monospace;Arial=arial,helvetica,sans-serif;Arial Black=arial black,sans-serif;Book Antiqua=book antiqua,palatino,serif;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,palatino,serif;Helvetica=helvetica,arial,sans-serif;Impact=impact,sans-serif;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco,monospace;Times New Roman=times new roman,times,serif;Trebuchet MS=trebuchet ms,geneva,sans-serif;Verdana=verdana,geneva,sans-serif;Webdings=webdings;Wingdings=wingdings,zapf dingbats",
+		theme_advanced_font_sizes : '8pt,9pt,10pt,11pt,12pt,14pt,16pt,18pt,20pt,22pt,24pt,28pt,36pt',		
+				
+		paste_retain_style_properties: 'font-size,font-family,color,text-align',
+		paste_remove_styles_if_webkit: false,
+
+		
+		//force all menus to be constrained to the current view port.		
+		//constrain_menus : true,
+
+		// Example content CSS (should be your site CSS)
+		// content_css : "css/content.css",
+		// editor_css : "/myeditor.css"		
+
+		// Drop lists for link/image/media/template dialogs
+		external_template_list_url : "droplist_template_list.js",
+		external_link_list_url : "droplist_link_list.js",
+		external_image_list_url : "droplist_image_list.js",
+		media_external_list_url : "droplist_media_list.js",
+
+		// Style formats  {}
+		style_formats : [
+			{title : 'Text styles'},		
+			{title : 'Bold text', inline : 'b'},
+			{title : 'Strikethrough', inline : 'span', styles : {textDecoration : 'line-through'}},				
+			{title : 'Text Shadow (strong)', inline : 'span', classes : 'shadow-text'},
+			{title : 'Text Shadow (soft)', inline : 'span', classes : 'shadow-text-soft'},
+			{title : 'Subscript', inline : 'sub'},
+			{title : 'Superscript', inline : 'sup'},				
+			{title : 'Red text', inline : 'span', styles : {color : '#ff0000'}},
+			{title : 'Green text', inline : 'span', styles : {color : '#00c000'}},
+			{title : 'Blue text', inline : 'span', styles : {color : '#0300cc'}},				
+			{title : 'Table styles'},
+			{title : 'Table row 1', selector : 'tr', classes : 'tablerow1'}
+		],
+		
+		oninit : myCustomOnInit,
+		
+		//This option should contain a function name to be executed each time a editor instance is initialized. 
+		//init_instance_callback : "myCustomInitInstance"	
+		
+		/*setup : function(ed) {
+        ed.onInit.add(function(ed) {
+            //alert("We are ready to rumble 2!!!");
+			tinymce.ScriptLoader.load('somefile.js');			
+        });
+		},*/
+				
+		file_browser_callback : 'myFileBrowser',	
+		
+		//This option is considered deprecated.
+		//save_callback : "myCustomSaveContent",		 
+
+		// Replace values for the template plugin
+		template_replace_values : {
+			username : "Some User",
+			staffid : "991234"
+		}
+	});
+	
+function myFileBrowser (field_name, url, type, win) {
+  
+  //alert("Field_Name: " + field_name + " nURL: " + url + " nType: " + type + " nWin: " + win); // debug/testing 
+  
+  alert("file browse button clicked.");  
+  //open some browser to search for file
+      
+} 
+
+function myCustomOnInit() {
+        //alert("We are ready to rumble!");
+		//tinyMCE.ScriptLoader.load('somefile.js');						
+}
+function EditorReadOnly() {
+	//Hack to set read only at run-time (for TinyMCE 3.x)
+	//to do: use activeEditor instead of hardcode elm1 instance
+	var readonly_prop, prev_settings;
+
+	readonly_prop = 0;
+		
+	if (tinymce.EditorManager.editors.length) {
+	//alert(tinymce.EditorManager.editors.length);	
+	
+	readonly_prop = tinymce.settings.readonly;
+	prev_settings = tinymce.settings;
+	if (readonly_prop == 'undefined') {
+		//if read only was not defined in init is undefined, change to true	
+		readonly_prop = 1
+	}	
+	else {
+		readonly_prop = !readonly_prop //alternate on/off
+	}
+	//now set editor with the new read only property	
+	tinymce.EditorManager.execCommand('mceRemoveControl', false, 'elm1');
+	tinymce.settings = prev_settings;		
+	tinymce.settings.readonly = readonly_prop;				
+		if (readonly_prop) {
+		//if read only deactivate visual aid for borderless tables			
+			tinymce.settings.visual = false} 
+		else {
+			tinymce.settings.visual = true										
+		}	
+	tinymce.EditorManager.execCommand('mceAddControl', false, 'elm1');	
+	}
+}
+</script>
+<!-- /TinyMCE -->
+</head>
+<body role="application" style="margin: 0;">
+
+<form>
+	<div>
+		<h3>Full featured example</h3>
+		<p>
+			This page shows all available buttons and plugins that are included in the TinyMCE core package.
+			There are more examples on how to use TinyMCE in the Wiki.
+		</p>		
+		<div style="clear:both;margin-bottom:30px;">					
+			<div> 			
+			<!-- Gets replaced with TinyMCE, remember HTML in a textarea should be encoded -->
+				<div><textarea id="elm1" name="elm1" rows="15" cols="80" style="width: 100%">									
+					&lt;p&gt;
+						This is some example text that you can edit inside the &lt;strong&gt;TinyMCE editor&lt;/strong&gt;.
+					&lt;/p&gt;
+					&lt;p&gt;
+					Nam nisi elit, cursus in rhoncus sit amet, pulvinar laoreet leo. Nam sed lectus quam, ut sagittis tellus. Quisque dignissim mauris a augue rutrum tempor. Donec vitae purus nec massa vestibulum ornare sit amet id tellus. Nunc quam mauris, fermentum nec lacinia eget, sollicitudin nec ante. Aliquam molestie volutpat dapibus. Nunc interdum viverra sodales. Morbi laoreet pulvinar gravida. Quisque ut turpis sagittis nunc accumsan vehicula. Duis elementum congue ultrices. Cras faucibus feugiat arcu quis lacinia. In hac habitasse platea dictumst.&lt;/p&gt;								
+					&lt;p&gt;Pellentesque fermentum magna sit amet tellus varius ullamcorper. Vestibulum at urna augue, eget varius neque. Fusce facilisis venenatis dapibus. Integer non sem at arcu euismod tempor nec sed nisl. Morbi ultricies, mauris ut ultricies adipiscing, felis odio condimentum massa, et luctus est nunc nec eros. Text with a &lt;span class="mceNonEditable"&gt;[non editable]&lt;/span&gt; inline element.&lt;/p&gt;
+					&lt;p class="mceNonEditable"&gt;Noneditable text block with &lt;span class="mceEditable"&gt;[editable]&lt;/span&gt; items within.&lt;/p&gt;
+					&lt;p&gt;Text with tokens that isn't [[editable]] since they match the noneditabe_regexp.&lt;/p&gt;				
+					&lt;table style="width: 300px"&gt;
+						&lt;tbody&gt;
+							&lt;tr&gt;&lt;td&gt;a&lt;/td&gt;&lt;td style="font-family: Arial Black; font-size: 28pt"&gt;b&lt;/td&gt;&lt;/tr&gt;
+							&lt;tr&gt;&lt;td&gt;c&lt;/td&gt;&lt;td&gt;d&lt;/td&gt;&lt;/tr&gt;
+						&lt;/tbody&gt;
+					&lt;/table&gt;
+				</textarea></div>
+			</div>			
+		</div>		
+	<div style="clear:both;margin:7px 0;display:block;">
+		<!-- Some integration calls -->
+		<a href="javascript:;" onclick="tinyMCE.get('elm1').show();return false;">[Show]</a>
+		<a href="javascript:;" onclick="tinyMCE.get('elm1').hide();return false;">[Hide]</a>
+		<a href="javascript:;" onclick="tinyMCE.get('elm1').execCommand('Bold');return false;">[Bold]</a>
+		<a href="javascript:;" onclick="alert(tinyMCE.get('elm1').getContent());return false;">[Get contents]</a>
+		<a href="javascript:;" onclick="alert(tinyMCE.get('elm1').selection.getContent());return false;">[Get selected HTML]</a>
+		<a href="javascript:;" onclick="alert(tinyMCE.get('elm1').selection.getContent({format : 'text'}));return false;">[Get selected text]</a>
+		<a href="javascript:;" onclick="alert(tinyMCE.get('elm1').selection.getNode().nodeName);return false;">[Get selected element]</a>
+		<a href="javascript:;" onclick="tinyMCE.execCommand('mceInsertContent',false,'<b>Hello world!!</b>');return false;">[Insert HTML]</a>
+		<a href="javascript:;" onclick="tinyMCE.execCommand('mceReplaceContent',false,'<b>{$selection}</b>');return false;">[Replace selection]</a>
+		<a href="javascript:;" onclick="tinyMCE.get('elm1').setProgressState(true);return false;">Set ProgressState</a>	
+		<a href="javascript:;" onclick="alert(tinyMCE.get('elm1').isDirty());return false;">IsDirty?</a>
+		<a href="javascript:;" onclick="tinyMCE.get('elm1').setContent('hello world');return false;">Set content</a>	
+		<a href="javascript:;" onclick="tinyMCE.execCommand('mceSetContent',false,'<b>hello world!!</b>');return false;">mceSetContent</a>
+		<a href="javascript:;" onclick="EditorReadOnly();return false;">Switch Read Only/Editable</a>		
+		<br />
+	</div>		
+	</div>
+</form>
+
+<script type="text/javascript">
+//Call some function before abandoning the page?
+window.onbeforeunload = function(){};
+window.focus();
+</script>
+</body>
+</html>
