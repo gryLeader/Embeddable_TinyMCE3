@@ -4,7 +4,10 @@ Single folder, contained, TinyMCE 3.x mod to be used within desktop apps as WYSI
 ![EmbeddableTinyMCE3v102](https://user-images.githubusercontent.com/85140033/121706271-d95e8200-caab-11eb-813d-9d775b0c8f39.jpg)
 Img: Embeddable TinyMCE-3 full editor showing a tabbed document.
 
-**Note:** *Download latest version from the releases page. I'm having problems updating the repository.
+**Demo**
+https://gryleader.github.io/tiny/full.html
+
+**Note:** *Download latest version from the releases page. I'm having problems updating the repository.*
 
 **Embeddable TinyMCE-3** is a mod of the Open Source WYSIWYG HTML editor TinyMCE, Version: 3.5.12 (2016-10-31), which was the last version of the 3.x branch supporting IE6. It contains some -minor- modifications in order to enable its use embedded within apps, e.g. loaded from application resources, so it is possible to load the editor in a contained way (with no visible external files).
 
